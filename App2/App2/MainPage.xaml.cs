@@ -4,14 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using App2.Modelos;
 
 namespace App2
 {
 	public partial class MainPage : ContentPage
 	{
+        // vetor de disciplinas
+        Disciplina[] disciplinas = new Disciplina[4]
+        {
+            new Disciplina("Cálculo 1", 1),
+            new Disciplina("Introdução a Engenharia", 2),
+            new Disciplina("Cálculo 2", 3),
+            new Disciplina("Projetos de Engenharia", 4)
+        };
+
 		public MainPage()
 		{
 			InitializeComponent();
+            // para todos as disciplinas do vetor
+            foreach (Disciplina disciplina in disciplinas)
+            {
+                // adicionar um elemento na caixa de seleção
+                Picker.Items.Add(disciplina.semestre + " - " + disciplina.nome);
+            }
 		}
 
         void OnButtonClicked(object sender, EventArgs args)
@@ -24,11 +40,12 @@ namespace App2
                 Entry2.Text.Length > 0 &&
                 Picker.SelectedIndex >= 0)
             {
-                // criar variáveis 
-                int periodo = int.Parse(Entry2.Text);
-                int semestre = Picker.SelectedIndex + 1;
+                // criar objeto aluno
+                Aluno aluno = new Aluno();
+                // modificar o período do aluno de acordo com o texto
+                aluno.periodo = int.Parse(Entry2.Text);
                 // verificar se os valores são iguais
-                if (periodo == semestre)
+                if (aluno.periodo == disciplinas[Picker.SelectedIndex].semestre)
                 {
                     // habilitar mensagem de erro
                     Label1.IsVisible = true;

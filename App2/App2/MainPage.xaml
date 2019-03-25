@@ -11,12 +11,7 @@
         <Entry x:Name="Entry2" Keyboard="Numeric" Placeholder="Período" />
 
         <Picker x:Name="Picker" Title="Disciplina">
-            <Picker.Items>
-                <x:String>1 - Cálculo 1</x:String>
-                <x:String>2 - Introdução a Engenharia</x:String>
-                <x:String>3 - Cálculo 2</x:String>
-                <x:String>4 - Projetos de Engenharia</x:String>
-            </Picker.Items>
+            <Picker.Items></Picker.Items>
         </Picker>
 
         <Label x:Name="Label1" IsVisible="False"
