@@ -30,7 +30,7 @@ namespace App2
                 // verificar se os valores são iguais
                 if (periodo == semestre)
                 {
-                    // habilitar mensagem de erro
+                    // habilitar mensagem de sucesso
                     Label1.IsVisible = true;
                 } else
                 {
