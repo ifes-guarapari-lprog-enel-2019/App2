@@ -45,7 +45,7 @@ namespace App2
                 // modificar o período do aluno de acordo com o texto
                 aluno.periodo = int.Parse(Entry2.Text);
                 // verificar se os valores são iguais
-                if (aluno.periodo == disciplinas[Picker.SelectedIndex].semestre)
+                if (aluno.Matricular(disciplinas[Picker.SelectedIndex]))
                 {
                     // habilitar mensagem de erro
                     Label1.IsVisible = true;
