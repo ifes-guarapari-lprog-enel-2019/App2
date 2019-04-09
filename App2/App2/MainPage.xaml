@@ -10,7 +10,9 @@
 
         <Entry x:Name="Entry2" Keyboard="Numeric" Placeholder="Período" />
 
-        <Picker x:Name="Picker" Title="Disciplina">
+        <Picker x:Name="Picker"
+                Title="Disciplina"
+                SelectedIndexChanged="OnPickerSelectedIndexChanged">
             <Picker.Items></Picker.Items>
         </Picker>
 
